@@ -7,20 +7,23 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
-    public static void getDriver(String browserType){
+    public static WebDriver getDriver(String browserType){
         if(browserType.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            WebDriver driver = new ChromeDriver();
-            driver.manage().window().maximize();
-        }
-        if(browserType.equalsIgnoreCase("firefox")){
+            return new ChromeDriver(); //don't have to store in a variable, "driver"
+            //WebDriver driver = new ChromeDriver();
+            //driver.manage().window().maximize();
+        }else if(browserType.equalsIgnoreCase("firefox")){
             WebDriverManager.firefoxdriver().setup();
-            WebDriver driver = new FirefoxDriver();
-            driver.manage().window().maximize();
+            return new FirefoxDriver();
+        }else{
+            System.out.println("Given browser type is not supported");
+            System.out.println("Driver = null");
+            return null;
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //static so we don't have to create an object
         getDriver("chrome");
     }
 }
