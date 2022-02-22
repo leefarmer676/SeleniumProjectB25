@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class Day2_Homework3 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         WebDriver driver;
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -20,6 +20,7 @@ public class Day2_Homework3 {
         }else{
             System.out.println("title verification failed");
         }
+        Thread.sleep(1000);
         driver.navigate().back();
 
         String actualHomeTitle = driver.getTitle();

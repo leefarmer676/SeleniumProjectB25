@@ -30,6 +30,7 @@ public class Day2_HomeWork1 {
         }else{
             System.out.println("Title verification failed");
         }
+        driver.close();
 
 
     }
