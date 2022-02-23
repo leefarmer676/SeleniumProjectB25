@@ -37,5 +37,16 @@ public class BrowserUtils {
         }
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
+
+        //BrowserUtils.switchWindowAndVerify(driver, "etsy", "Etsy");
+
+        /*
+        This method accepts a String "expectedTitle" and Asserts if it is true
+         */
+
+    }
+    public static void verifyTitle(WebDriver driver, String expectedTitle ){
+
+        Assert.assertEquals(driver.getTitle(), expectedTitle);
     }
 }
