@@ -43,6 +43,7 @@ public class T1_WindowHandling {
 
             if (driver.getCurrentUrl().contains("etsy")) {
                 break;                 //this makes it stop with the Etsy tab open
+                                    //not using windowhandle because they are randomly changing values
             }
 
         }
