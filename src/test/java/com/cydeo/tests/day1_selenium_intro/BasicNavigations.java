@@ -16,9 +16,10 @@ public class BasicNavigations {
 
         //3 test to see if it's working
         driver.get("https://tesla.com");
+        driver.get("https://www.facebook.com");
 
         //stop code execution for 3 seconds
-        Thread.sleep(3000);
+       // Thread.sleep(3000);
 
         // use selenium to navigate back
         driver.navigate().back();
@@ -35,11 +36,16 @@ public class BasicNavigations {
         //use selenium to navigate refresh
         driver.navigate().refresh();
 
-        //stop code execution for 3 seconds
-        Thread.sleep(3000);
+        //stop code execution for 1 seconds
+        Thread.sleep(1000);
 
         //use navigate to go to a different page
         driver.navigate().to("https://www.google.com");
+
+
+
+       driver.close();
+
 
     }
 
