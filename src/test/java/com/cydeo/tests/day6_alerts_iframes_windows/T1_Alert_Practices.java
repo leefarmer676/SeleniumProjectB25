@@ -27,9 +27,9 @@ public class T1_Alert_Practices {
     @Test
     public void alert_test1() throws InterruptedException {
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         informationAlertButton.click();
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         //to be able to click to button on the alert, we need to switch the dirver's focus to Alert itself (would be looking at HtML otherwise)
         Alert alert = driver.switchTo().alert();
 

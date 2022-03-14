@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -29,15 +28,15 @@ public class DropdownPractices {
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
         //select Illinois
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         stateDropdown.selectByVisibleText("Illinois");
 
         //select Virginia
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         stateDropdown.selectByValue("VA");
 
         //select California
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         stateDropdown.selectByIndex(5);
 
         //verify final selected option is California
@@ -71,10 +70,13 @@ public class DropdownPractices {
         Assert.assertEquals(expectedMonth, actualMonth);
         Assert.assertEquals(expectedDay, actualDay);
     }
+    /*
 @AfterMethod
     public void teardownMethod(){
         driver.close();
+
 }
+     */
 
 
 

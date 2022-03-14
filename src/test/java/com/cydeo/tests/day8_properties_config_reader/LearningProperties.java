@@ -6,7 +6,11 @@ public class LearningProperties {
 
     @Test
     public void java_properties_reading_test(){
+        //key = value
+        //os.name = Windows 10
+        //we provided the key of username (user.name), and it provided the value to us
         System.out.println("System.getProperty(\"os.name\") = " + System.getProperty("os.name"));
+        System.out.println("System.getProperty(\"user.name\") = " + System.getProperty("user.name"));
     }
 
 
