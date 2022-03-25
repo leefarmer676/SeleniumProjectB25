@@ -1,20 +1,16 @@
 package com.cydeo.tests.day8_properties_config_reader;
 
 import com.cydeo.utilities.ConfigurationReader;
-import com.cydeo.utilities.WebDriverFactory;
+import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.util.concurrent.TimeUnit;
 
 public class T4_Config_Practice {
 
-    public WebDriver driver;
+    /*public WebDriver driver;
 
     @BeforeMethod
     public void setupMethod(){
@@ -27,16 +23,21 @@ public class T4_Config_Practice {
 
     }
 
+     */
+
+
+
     @Test
     public void google_search_test(){
+        Driver.getDriver().get("https://www.google.com");
         //write "apple" in search box
-        WebElement googleSearchBox = driver.findElement(By.xpath("//input[@name='q']"));
+        WebElement googleSearchBox = Driver.getDriver().findElement(By.xpath("//input[@name='q']"));
         googleSearchBox.sendKeys("apple"+ Keys.ENTER);
 
         //verify title
         //expected title: apple - Google Search
-        String expectedTitle = "apple - Google Search";
-        String actualTitle = driver.getTitle();
+        String expectedTitle = ConfigurationReader.getProperty("searchValue" + " - Google Search");
+        String actualTitle = Driver.getDriver().getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle);
     }
