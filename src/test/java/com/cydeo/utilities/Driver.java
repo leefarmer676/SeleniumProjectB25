@@ -44,4 +44,16 @@ public class Driver {
         //if it's not null, it will return the existing driver
         return driver;
     }
+
+    //this method will make sure our driver value is always null after using quit() method instead
+    //of closing everythign down completely and we cannot use the driver method anymore
+
+    public static void closeDriver(){
+        if(driver != null){
+            driver.quit();
+            //noSuchSessionException when driver value is not null
+            driver = null; //this will now say our driver is null after we close a session,
+            //so that it will go through the above switch case and can assign us a browser again
+        }
+    }
 }
