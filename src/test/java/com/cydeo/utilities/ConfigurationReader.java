@@ -7,7 +7,7 @@ import java.util.Properties;
 public class ConfigurationReader {
 
     //create object of Properties
-    //static so it can read before everything else runs and only runs once
+    //static, so it can read before everything else runs and only runs once
     private static Properties properties = new Properties();
 
     static{

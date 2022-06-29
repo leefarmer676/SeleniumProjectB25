@@ -33,17 +33,14 @@ this method accepts 3 arguments
  */
     public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedInTitle){
         Set<String> allWindowsHandles = driver.getWindowHandles();
-
         for (String each : allWindowsHandles) {
-
             driver.switchTo().window(each);
             System.out.println("Current URL: " + driver.getCurrentUrl());
 
             if (driver.getCurrentUrl().contains(expectedInUrl)) {
                 break;                 //this makes it stop with the Etsy tab open
-                //not using windowhandle because they are randomly changing values
+                //not using windowHandle because they are randomly changing values
             }
-
         }
         String actualTitle = driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
